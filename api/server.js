@@ -1,6 +1,7 @@
 const express = require("express")
 const server = express()
-const jokesRouter = require("./api/jokesRouter.js")
+const jokesRouter = require("./jokes/jokesRouter")
+
 
 server.use(express.json())
 server.use("/jokes", jokesRouter)
@@ -12,4 +13,5 @@ server.use((err, req, res, next) => { //eslint-disable-line
         stack:err.stack
     })
 })
+
 module.exports = server;
